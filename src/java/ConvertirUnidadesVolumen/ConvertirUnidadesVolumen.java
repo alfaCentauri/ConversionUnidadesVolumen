@@ -30,15 +30,6 @@ import javax.ejb.Stateless;
 @Stateless()
 public class ConvertirUnidadesVolumen {
 
-    /**
-     * Web service para convertir litros a galones.
-     * @param litros    Tipo duoble.
-     * @return Regresa un double.
-     */
-    @WebMethod(operationName = "litrosAGalones")
-    public double convertirLitrosAGalones(@WebParam(name = "litros") double litros) {
-        return litros*026417;
-    }
 
     /**
      * Web service para convertir galones a litros.
@@ -48,5 +39,15 @@ public class ConvertirUnidadesVolumen {
     @WebMethod(operationName = "galonesALitros")
     public double galonesALitros(@WebParam(name = "galones") double galones) {
         return galones*3.7854;
+    }
+
+    /**
+     * Web service para convertir litros a galones.
+     * @param litros   Tipo duoble.
+     * @return Regresa un double.
+     */
+    @WebMethod(operationName = "litrosAGalones")
+    public double litrosAGalones(@WebParam(name = "litros") double litros) {
+        return litros*0.26417;
     }
 }
